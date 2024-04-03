@@ -11,6 +11,7 @@
 		"all",
 		"--shm-size=8g"
 	],
+	"appPort": 4242,
 	"mounts": [
 		"source=profile,target=/root,type=volume",
 		"target=/root/.vscode-server,type=volume"
@@ -28,8 +29,5 @@
 				"GitHub.copilot"
 			]
 		}
-	},
-	"forwardPorts": [
-		4242
-	]
+	}
 }

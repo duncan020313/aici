@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ "X$AICI_API_BASE" = "X" ] ; then
-  export AICI_API_BASE="http://127.0.0.1:4242/v1/"
+  export AICI_API_BASE="http://0.0.0.0:4242/v1/"
 fi
 
 PYTHONPATH=`dirname $0`/py \

@@ -670,6 +670,9 @@ pub async fn server_main<ME: ModelExec>(
     };
     let app_data = web::Data::new(app_data);
 
+    args.host = "0.0.0.0".to_string();
+    args.port = 4242;
+
     println!("Listening at http://{}:{}", args.host, args.port);
     HttpServer::new(move || {
         App::new()

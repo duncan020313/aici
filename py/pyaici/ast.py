@@ -74,7 +74,9 @@ def gen(
     if set_var is not None:
         stmts.append(stmt_set(set_var, e_current()))
     if append_to_var is not None:
-        stmts.append(stmt_set(append_to_var, e_concat(e_var(append_to_var), e_current())))
+        stmts.append(
+            stmt_set(append_to_var, e_concat(e_var(append_to_var), e_current()))
+        )
     if set is not None:
         for var, expr in set.items():
             stmts.append(stmt_set(var, expr))
@@ -263,7 +265,9 @@ def json_to_steps(json_value):
     for step in steps:
         if "Fixed" in step:
             if len(new_steps) > 0 and "Fixed" in new_steps[-1]:
-                new_steps[-1]["Fixed"]["text"]["String"]["str"] += step["Fixed"]["text"]["String"]["str"]
+                new_steps[-1]["Fixed"]["text"]["String"]["str"] += step["Fixed"][
+                    "text"
+                ]["String"]["str"]
                 continue
         new_steps.append(step)
     return new_steps
